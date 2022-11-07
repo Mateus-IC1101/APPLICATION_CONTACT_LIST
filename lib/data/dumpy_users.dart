@@ -2,10 +2,7 @@ import 'package:app_loja/models/user.dart';
 
 const DUMPY_USERS = {
   '1': const User(
-      id: 1,
-      name: 'Maria',
-      email: 'maria@gmail.com',
-      url_avatar: 'https://www.w3schools.com/howto/img_avatar2.png'),
+      id: 1, name: 'Maria', email: 'maria@gmail.com', url_avatar: ''),
   '2': const User(
     id: 2,
     name: 'Ramon',
