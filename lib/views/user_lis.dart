@@ -1,6 +1,5 @@
 import 'package:app_loja/components/user_tile.dart';
 import 'package:app_loja/data/dumpy_users.dart';
-import 'package:app_loja/views/bottom.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,7 @@ class _UserListState extends State<UserList> {
     final screens = [
       ListView.builder(
           itemCount: users.length,
-          itemBuilder: (ctx, i) => UserTile(users.values.elementAt(i))),
+          itemBuilder: (ctx, i) => UserTile(users.elementAt(i))),
       Center(
         child: Container(
           color: Colors.green,
@@ -54,11 +53,11 @@ class _UserListState extends State<UserList> {
                 label: 'Listar',
                 backgroundColor: Colors.blue[300]),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.add),
                 label: 'Cadastrar',
                 backgroundColor: Colors.green[300]),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.settings),
                 label: 'Extras',
                 backgroundColor: Colors.deepOrange[300])
           ],

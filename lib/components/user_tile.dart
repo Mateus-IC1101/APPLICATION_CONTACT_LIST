@@ -15,12 +15,13 @@ class UserTile extends StatelessWidget {
     final avatar = user.url_avatar == null || user.url_avatar.isEmpty
         ? CircleAvatar(child: Icon(Icons.person))
         : CircleAvatar(backgroundImage: NetworkImage(user.url_avatar));
-    final name = Text('${user.name} - ${user.email}');
+    final name = Text('${user.name}');
     final id = Text('# ${user.id.toString()}');
+    final numero = Text('${user.numero}');
     return ListTile(
       leading: avatar,
       title: name,
-      subtitle: id,
+      subtitle: numero,
       trailing: TextButton(
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.all<Color>(

@@ -1,19 +1,17 @@
 import 'package:app_loja/models/user.dart';
 
-const DUMPY_USERS = {
-  '1': const User(
-      id: 1, name: 'Maria', email: 'maria@gmail.com', url_avatar: ''),
-  '2': const User(
+const DUMPY_USERS = [
+  const User(
     id: 2,
     name: 'Ramon',
-    email: 'maria@gmail.com',
+    numero: '(86) 99522-0175',
     url_avatar:
         'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png',
   ),
-  '3': const User(
-      id: 3,
-      name: 'Vitor',
-      email: 'maria@gmail.com',
+  const User(
+      id: 2,
+      name: 'Caique',
+      numero: '(86) 98822-0175',
       url_avatar:
-          'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000'),
-};
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvgrGLamCbgFsBx98useiHyieLCyoVc81vcWU6XVo&s')
+];
