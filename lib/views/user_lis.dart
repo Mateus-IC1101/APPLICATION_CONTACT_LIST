@@ -18,6 +18,22 @@ class UserList extends StatelessWidget {
       body: ListView.builder(
           itemCount: users.length,
           itemBuilder: (ctx, i) => UserTile(users.values.elementAt(i))),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'xxxxx',
+              backgroundColor: Colors.blue),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'xxxxx',
+              backgroundColor: Colors.blue),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'xxxxx',
+              backgroundColor: Colors.blue)
+        ],
+      ),
     );
   }
 }
