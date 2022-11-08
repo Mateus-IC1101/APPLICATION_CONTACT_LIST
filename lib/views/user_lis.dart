@@ -1,5 +1,6 @@
 import 'package:app_loja/components/user_tile.dart';
 import 'package:app_loja/data/dumpy_users.dart';
+import 'package:app_loja/views/user_create.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +21,7 @@ class _UserListState extends State<UserList> {
       ListView.builder(
           itemCount: users.length,
           itemBuilder: (ctx, i) => UserTile(users.elementAt(i))),
-      Center(
-        child: Container(
-          color: Colors.green,
-        ),
-      ),
+      UserCreate(),
       Center(
         child: Container(
           color: Colors.red,
