@@ -14,13 +14,16 @@ class UserList extends StatefulWidget {
 
 class _UserListState extends State<UserList> {
   int current_index = 0;
-  final users = DUMPY_USERS;
   @override
   Widget build(BuildContext context) {
+    final users = DUMPY_USERS;
     final screens = [
       ListView.builder(
-          itemCount: users.length,
-          itemBuilder: (ctx, i) => UserTile(users.elementAt(i))),
+          itemBuilder: (context, index) => UserTile(users.elementAt(index)),
+          // separatorBuilder: (BuildContext context, int index) => const Divider(
+          //       color: Colors.white,
+          //     ),
+          itemCount: users.length),
       UserCreate(),
       Center(
         child: Container(
@@ -39,6 +42,10 @@ class _UserListState extends State<UserList> {
           onTap: (index) {
             setState(() {
               current_index = index;
+              print('index--------');
+              print(index);
+              print('current--------');
+              print(current_index);
             });
           },
           type: BottomNavigationBarType.shifting,
