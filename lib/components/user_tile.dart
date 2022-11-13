@@ -6,18 +6,18 @@ import 'package:flutter/material.dart';
 class UserTile extends StatefulWidget {
   UserTile(this.user);
   final User user;
-  static List<int> selecionados = [];
 
   @override
   State<UserTile> createState() => _UserTileState();
 }
 
 class _UserTileState extends State<UserTile> {
+  List<int> selecionados = [];
   @override
   Widget build(BuildContext context) {
     var item_selecionado = int.parse(widget.user.id.toString());
 
-    final avatar = widget.user.url_avatar == null ||
+    var avatar = widget.user.url_avatar == null ||
             widget.user.url_avatar.isEmpty
         ? CircleAvatar(child: Icon(Icons.person))
         : CircleAvatar(backgroundImage: NetworkImage(widget.user.url_avatar));
@@ -28,27 +28,32 @@ class _UserTileState extends State<UserTile> {
     final numero = Text('${widget.user.numero}');
 
     return ListTile(
-      selected: UserTile.selecionados.contains(item_selecionado) ? true : false,
-      selectedTileColor: Color.fromARGB(82, 33, 243, 142),
+      selected: selecionados.contains(item_selecionado) ? true : false,
+      selectedTileColor: Color.fromARGB(82, 89, 199, 79),
       onLongPress: () {
         setState(() {
-          UserTile.selecionados.contains(item_selecionado)
-              ? UserTile.selecionados.remove(item_selecionado)
-              : UserTile.selecionados.add(item_selecionado);
-          print(item_selecionado);
-          print(UserTile.selecionados);
+          selecionados.contains(item_selecionado)
+              ? selecionados.remove(item_selecionado)
+              : selecionados.add(item_selecionado);
         });
       },
-      leading: avatar,
+      leading: selecionados.contains(item_selecionado)
+          ? CircleAvatar(
+              child: Icon(
+                Icons.check,
+                color: Colors.white,
+              ),
+              backgroundColor: Color.fromARGB(255, 51, 163, 54))
+          : avatar,
       title: name,
       subtitle: numero,
       trailing: TextButton(
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.all<Color>(
-              Color.fromARGB(255, 32, 137, 42)),
+              Color.fromARGB(174, 215, 197, 6)),
         ),
         onPressed: () {},
-        child: Icon(Icons.storage_rounded),
+        child: Icon(Icons.star),
       ),
       onTap: () => {},
       enabled: true,

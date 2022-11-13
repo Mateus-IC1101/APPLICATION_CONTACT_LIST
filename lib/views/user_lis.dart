@@ -20,9 +20,6 @@ class _UserListState extends State<UserList> {
     final screens = [
       ListView.builder(
           itemBuilder: (context, index) => UserTile(users.elementAt(index)),
-          // separatorBuilder: (BuildContext context, int index) => const Divider(
-          //       color: Colors.white,
-          //     ),
           itemCount: users.length),
       UserCreate(),
       Center(
@@ -34,9 +31,10 @@ class _UserListState extends State<UserList> {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 32, 137, 42),
+          backgroundColor: Colors.blue[300],
           title: Text('Cadastro de Usuários'),
         ),
+        backgroundColor: Color.fromARGB(255, 242, 237, 237),
         body: screens[current_index],
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index) {
