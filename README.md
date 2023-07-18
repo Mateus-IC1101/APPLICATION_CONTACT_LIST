@@ -1,4 +1,4 @@
-# app_loja
+# app_contato
 
 A new Flutter project.
 

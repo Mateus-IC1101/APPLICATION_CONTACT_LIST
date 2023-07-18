@@ -1,15 +1,17 @@
-import 'package:flutter/material.dart';
-
 class User {
-  final int? id;
-  final String name;
+  final int id;
+  final String nome;
   final String numero;
-  final String url_avatar;
+  final String favorito;
+  final String email;
+  final String? url_avatar;
 
   const User({
     required this.id,
-    required this.name,
+    required this.nome,
     required this.numero,
-    required this.url_avatar,
+    required this.favorito,
+    required this.email,
+    this.url_avatar,
   });
 }
